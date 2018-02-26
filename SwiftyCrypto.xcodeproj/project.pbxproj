@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B7B2094820417776003BB264 /* SwiftyCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2093E20417776003BB264 /* SwiftyCrypto.framework */; };
-		B7B2094D20417776003BB264 /* SwiftyCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2094C20417776003BB264 /* SwiftyCryptoTests.swift */; };
 		B7B2094F20417776003BB264 /* SwiftyCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B2094120417776003BB264 /* SwiftyCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7B2096420417799003BB264 /* NSData+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B2095920417799003BB264 /* NSData+SHA.m */; };
 		B7B2096520417799003BB264 /* RSAKeyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2095A20417799003BB264 /* RSAKeyFactory.swift */; };
@@ -32,6 +31,10 @@
 		B7B2098A20419D77003BB264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B2098920419D77003BB264 /* Assets.xcassets */; };
 		B7B2098D20419D77003BB264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B2098B20419D77003BB264 /* LaunchScreen.storyboard */; };
 		B7B2099820419D78003BB264 /* SwiftyCryptoTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2099720419D78003BB264 /* SwiftyCryptoTestAppTests.swift */; };
+		B7B209A52043B88F003BB264 /* HMACCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209A32043B88F003BB264 /* HMACCrypto.swift */; };
+		B7B209A62043B88F003BB264 /* HMACCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209A32043B88F003BB264 /* HMACCrypto.swift */; };
+		B7B209AB2043B9EA003BB264 /* HMACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209AA2043B9EA003BB264 /* HMACTests.swift */; };
+		B7B209BA20440406003BB264 /* CommonCryptoHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B209B920440406003BB264 /* CommonCryptoHeader.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +66,6 @@
 		B7B2094120417776003BB264 /* SwiftyCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyCrypto.h; sourceTree = "<group>"; };
 		B7B2094220417776003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B2094720417776003BB264 /* SwiftyCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7B2094C20417776003BB264 /* SwiftyCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCryptoTests.swift; sourceTree = "<group>"; };
 		B7B2094E20417776003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B2095920417799003BB264 /* NSData+SHA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SHA.m"; sourceTree = "<group>"; };
 		B7B2095A20417799003BB264 /* RSAKeyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyFactory.swift; sourceTree = "<group>"; };
@@ -91,6 +93,10 @@
 		B7B2099320419D78003BB264 /* SwiftyCryptoTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCryptoTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B2099720419D78003BB264 /* SwiftyCryptoTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCryptoTestAppTests.swift; sourceTree = "<group>"; };
 		B7B2099920419D78003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7B209A32043B88F003BB264 /* HMACCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMACCrypto.swift; sourceTree = "<group>"; };
+		B7B209AA2043B9EA003BB264 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
+		B7B209B72043F64B003BB264 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		B7B209B920440406003BB264 /* CommonCryptoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,8 @@
 		B7B2094020417776003BB264 /* SwiftyCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				B7B209B82043F6C5003BB264 /* CommonCrypto */,
+				B7B209AC2043BB4F003BB264 /* HMAC */,
 				B7B2096120417799003BB264 /* protocol */,
 				B7B2095820417799003BB264 /* RSA */,
 				B7B2094120417776003BB264 /* SwiftyCrypto.h */,
@@ -162,8 +170,8 @@
 		B7B2094B20417776003BB264 /* SwiftyCryptoTests */ = {
 			isa = PBXGroup;
 			children = (
+				B7B209A92043B9D6003BB264 /* HMAC-Based */,
 				B7B2096E20419C29003BB264 /* RSA */,
-				B7B2094C20417776003BB264 /* SwiftyCryptoTests.swift */,
 				B7B2094E20417776003BB264 /* Info.plist */,
 			);
 			path = SwiftyCryptoTests;
@@ -228,6 +236,31 @@
 			path = SwiftyCryptoTestAppTests;
 			sourceTree = "<group>";
 		};
+		B7B209A92043B9D6003BB264 /* HMAC-Based */ = {
+			isa = PBXGroup;
+			children = (
+				B7B209AA2043B9EA003BB264 /* HMACTests.swift */,
+			);
+			path = "HMAC-Based";
+			sourceTree = "<group>";
+		};
+		B7B209AC2043BB4F003BB264 /* HMAC */ = {
+			isa = PBXGroup;
+			children = (
+				B7B209A32043B88F003BB264 /* HMACCrypto.swift */,
+			);
+			path = HMAC;
+			sourceTree = "<group>";
+		};
+		B7B209B82043F6C5003BB264 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				B7B209B72043F64B003BB264 /* module.modulemap */,
+				B7B209B920440406003BB264 /* CommonCryptoHeader.h */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -235,6 +268,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B209BA20440406003BB264 /* CommonCryptoHeader.h in Headers */,
 				B7B2096920417799003BB264 /* NSData+SHA.h in Headers */,
 				B7B2094F20417776003BB264 /* SwiftyCrypto.h in Headers */,
 			);
@@ -331,6 +365,7 @@
 					};
 					B7B2094620417776003BB264 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = B7B2097F20419D77003BB264;
 					};
@@ -409,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B209A52043B88F003BB264 /* HMACCrypto.swift in Sources */,
 				B7B2096820417799003BB264 /* Asn1Parser.swift in Sources */,
 				B7B2096620417799003BB264 /* RSAMessage.swift in Sources */,
 				B7B2096720417799003BB264 /* RSASignature.swift in Sources */,
@@ -425,9 +461,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B209AB2043B9EA003BB264 /* HMACTests.swift in Sources */,
+				B7B209A62043B88F003BB264 /* HMACCrypto.swift in Sources */,
 				B7B2097820419C29003BB264 /* RSAMessageTests.swift in Sources */,
 				B7B2097720419C29003BB264 /* RSAKeySigningTests.swift in Sources */,
-				B7B2094D20417776003BB264 /* SwiftyCryptoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -542,6 +580,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -552,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -594,6 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -619,6 +660,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -642,6 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,12 +695,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
@@ -669,12 +718,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
@@ -685,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTestApp/Info.plist;
@@ -692,6 +747,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -701,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTestApp/Info.plist;
@@ -708,6 +765,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -718,12 +776,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTestAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
@@ -735,12 +795,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3C5F8F3EE;
 				INFOPLIST_FILE = SwiftyCryptoTestAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
