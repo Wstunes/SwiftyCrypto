@@ -1,13 +1,13 @@
 import Foundation
 import CommonCrypto
 
-enum HMACAlgorithm {
+public enum HMACAlgorithm {
     case sha256
     case sha384
     case sha512
 }
 
-extension HMACAlgorithm {
+public extension HMACAlgorithm {
     var commonCryptoAlgorithm: CCHmacAlgorithm {
         switch self {
         case .sha256:
@@ -31,7 +31,7 @@ extension HMACAlgorithm {
     }
 }
 
-func hmac(algorithm: HMACAlgorithm, key: Data, message: Data) -> Data {
+public func hmac(algorithm: HMACAlgorithm, key: Data, message: Data) -> Data {
     let context = UnsafeMutablePointer<CCHmacContext>.allocate(capacity: 1)
     defer { context.deallocate(capacity: 1) }
 
