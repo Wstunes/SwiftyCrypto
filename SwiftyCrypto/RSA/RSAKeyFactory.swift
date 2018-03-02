@@ -15,7 +15,7 @@ enum SwiftyCryptoRSAKeySize: Int {
     case RSAKey512 = 4096
 }
 
-class RSAKeyFactory: NSObject {
+public class RSAKeyFactory: NSObject {
     static let shared = RSAKeyFactory()
 
     func generateKeyPair(keySize: SwiftyCryptoRSAKeySize) -> RSAKeyPair? {

@@ -13,7 +13,7 @@ public enum RSAKeyType {
     case PRIVATE
 }
 
-struct RSAKeyPair {
+public struct RSAKeyPair {
     var privateKey: RSAKey
     var publicKey: RSAKey
 }
