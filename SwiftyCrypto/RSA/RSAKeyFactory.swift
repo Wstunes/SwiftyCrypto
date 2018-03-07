@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SwiftyCryptoRSAKeySize: Int {
+public enum SwiftyCryptoRSAKeySize: Int {
     case RSAKey64 = 512
     case RSAKey128 = 1024
     case RSAKey256 = 2048
@@ -16,9 +16,9 @@ enum SwiftyCryptoRSAKeySize: Int {
 }
 
 public class RSAKeyFactory: NSObject {
-    static let shared = RSAKeyFactory()
+    public static let shared = RSAKeyFactory()
 
-    func generateKeyPair(keySize: SwiftyCryptoRSAKeySize) -> RSAKeyPair? {
+    public func generateKeyPair(keySize: SwiftyCryptoRSAKeySize) -> RSAKeyPair? {
         let publicKeyTag = UUID().uuidString
         let privateKeyTag = UUID().uuidString
 

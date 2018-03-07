@@ -14,15 +14,15 @@ public enum RSAKeyType {
 }
 
 public struct RSAKeyPair {
-    var privateKey: RSAKey
-    var publicKey: RSAKey
+    public var privateKey: RSAKey
+    public var publicKey: RSAKey
 }
 
 public class RSAKey {
-    var key: SecKey
-    var keyBase64String: String
-    var data: Data?
-    var keyType: RSAKeyType!
+    public var key: SecKey
+    public var keyBase64String: String
+    public var data: Data?
+    public var keyType: RSAKeyType!
 
     public init(key: SecKey, keyBase64String: String, keyType: RSAKeyType) {
         self.key = key
@@ -43,7 +43,7 @@ public class RSAKey {
         self.key = try RSAUtils.secKeyFromData(keyData: dataWithoutHeader, keyType: keyType, tag: UUID().uuidString)
     }
 
-    static func base64StringWithoutPrefixAndSuffix(pemString: String) throws -> String {
+    public static func base64StringWithoutPrefixAndSuffix(pemString: String) throws -> String {
         let lines = pemString.components(separatedBy: "\n").filter { line in
             return !line.hasPrefix("-----BEGIN") && !line.hasPrefix("-----END")
         }
@@ -102,7 +102,7 @@ public class RSAKey {
         }
     }
 
-    func format(keyData: Data, keyType: RSAKeyType) -> String {
+    public func format(keyData: Data, keyType: RSAKeyType) -> String {
 
         let pemType = keyType == .PRIVATE ? "RSA PRIVATE KEY" : "PUBLIC KEY"
 
