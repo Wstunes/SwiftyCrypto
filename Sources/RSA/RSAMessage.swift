@@ -77,15 +77,15 @@ public class RSAMessage: Message {
         
         switch digestType {
         case .sha1:
-            digest = (data as NSData).swiftyRSASHA1()
+            digest = (data as NSData).sha1
         case .sha224:
-            digest = (data as NSData).swiftyRSASHA224()
+            digest = (data as NSData).sha224
         case .sha256:
-            digest = (data as NSData).swiftyRSASHA256()
+            digest = (data as NSData).sha256
         case .sha384:
-            digest = (data as NSData).swiftyRSASHA384()
+            digest = (data as NSData).sha384
         case .sha512:
-            digest = (data as NSData).swiftyRSASHA512()
+            digest = (data as NSData).sha512
         }
         
         return digest
