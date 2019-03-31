@@ -105,7 +105,6 @@
 		B7B2099920419D78003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B209A32043B88F003BB264 /* HMACCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMACCrypto.swift; sourceTree = "<group>"; };
 		B7B209AA2043B9EA003BB264 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
-		B7B209B72043F64B003BB264 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +143,6 @@
 		B79CC85A2050CDF3006B71DB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B7B209B82043F6C5003BB264 /* CCommonCrypto */,
 				B7B209AC2043BB4F003BB264 /* HMAC */,
 				B7B2096120417799003BB264 /* protocol */,
 				B7B2095820417799003BB264 /* RSA */,
@@ -258,14 +256,6 @@
 				B7B209A32043B88F003BB264 /* HMACCrypto.swift */,
 			);
 			path = HMAC;
-			sourceTree = "<group>";
-		};
-		B7B209B82043F6C5003BB264 /* CCommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				B7B209B72043F64B003BB264 /* module.modulemap */,
-			);
-			path = CCommonCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
