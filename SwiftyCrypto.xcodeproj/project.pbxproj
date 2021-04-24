@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4608CFFA26349D13003B7775 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4608CFF926349D13003B7775 /* Package.swift */; };
 		B721AE3A2050D71600642030 /* NSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B721AE392050D71600642030 /* NSDataExtension.swift */; };
 		B7B2094820417776003BB264 /* SwiftyCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2093E20417776003BB264 /* SwiftyCrypto.framework */; };
 		B7B2094F20417776003BB264 /* SwiftyCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B2094120417776003BB264 /* SwiftyCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4608CFF926349D13003B7775 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B721AE392050D71600642030 /* NSDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDataExtension.swift; sourceTree = "<group>"; };
 		B7B2093E20417776003BB264 /* SwiftyCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B2094120417776003BB264 /* SwiftyCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyCrypto.h; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		B7B2093420417775003BB264 = {
 			isa = PBXGroup;
 			children = (
+				4608CFF926349D13003B7775 /* Package.swift */,
 				B7B2094120417776003BB264 /* SwiftyCrypto.h */,
 				B79CC85A2050CDF3006B71DB /* Sources */,
 				B7B2094220417776003BB264 /* Info.plist */,
@@ -460,6 +463,7 @@
 				B7B2096C20417799003BB264 /* SwiftyCryptoError.swift in Sources */,
 				B7B2096B20417799003BB264 /* RSAKey.swift in Sources */,
 				B7B2096A20417799003BB264 /* RSAUtils.swift in Sources */,
+				4608CFFA26349D13003B7775 /* Package.swift in Sources */,
 				B7B2096520417799003BB264 /* RSAKeyFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
