@@ -15,7 +15,6 @@ let package = Package(
             targets: ["SwiftyCrypto"])
     ],
     dependencies: [
-        .package(url: "https://github.com/jernejstrasner/CCommonCrypto.git", .branch("master"))
     ],
     targets: [
         .target(name: "SwiftyCrypto",
