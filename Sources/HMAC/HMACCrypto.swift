@@ -1,5 +1,5 @@
 import Foundation
-import CCommonCrypto
+import CommonCrypto
 
 public enum HMACAlgorithm {
     case sha256
