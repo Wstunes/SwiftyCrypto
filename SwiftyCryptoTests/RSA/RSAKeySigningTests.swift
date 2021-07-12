@@ -62,13 +62,13 @@ class SwiftyCryptoRSATests: XCTestCase {
 
         let signature = try? messageTobeSigned?.sign(signingKey: privateKey!, digestType: RSASignature.DigestType.sha256)
         XCTAssert(nil != signature)
-        XCTAssert("KR7KPmWtY46Bc3tal4CoNSHGVLh7jgJC1+AlRzBxFw0/4HNBa5a4/Gynb2PG9RljvnppM+Uy9TX2WitHIh9zE/OxaP0faQ/Lc2GyIcX0CBrz4IZ0O0Ky/w1g5ugaT+XoKOzZlUso1F5Nr/waYVyWW57wdtf+BXDoOkj33iAPi/lqFpQrdD501MOs0rrttunJWs/X684jJr7aew8cs1JXNn91+krRt/z8VFJkgYClnfdAc6SPSbHQZPQB1kxApHANJYZEUOyiHn4AUhqnJ9IlWHKJl2KUKIqEVyKQWimoGIT2Sj6xBtIu4Zmx81fmyL1K3HksLCgbxYR03PGqN+WH1g==" == signature!!.base64String)
+        XCTAssert("KR7KPmWtY46Bc3tal4CoNSHGVLh7jgJC1+AlRzBxFw0/4HNBa5a4/Gynb2PG9RljvnppM+Uy9TX2WitHIh9zE/OxaP0faQ/Lc2GyIcX0CBrz4IZ0O0Ky/w1g5ugaT+XoKOzZlUso1F5Nr/waYVyWW57wdtf+BXDoOkj33iAPi/lqFpQrdD501MOs0rrttunJWs/X684jJr7aew8cs1JXNn91+krRt/z8VFJkgYClnfdAc6SPSbHQZPQB1kxApHANJYZEUOyiHn4AUhqnJ9IlWHKJl2KUKIqEVyKQWimoGIT2Sj6xBtIu4Zmx81fmyL1K3HksLCgbxYR03PGqN+WH1g==" == signature!.base64String)
 
         // successful verification
-        XCTAssert(true == (try! messageTobeSigned?.verify(verifyKey: publicKey!, signature: signature!!, digestType: RSASignature.DigestType.sha256))!)
+        XCTAssert(true == (try! messageTobeSigned?.verify(verifyKey: publicKey!, signature: signature!, digestType: RSASignature.DigestType.sha256))!)
 
         // failed verification
-        XCTAssert(false == (try! messageTobeSigned?.verify(verifyKey: keyPair!.publicKey, signature: signature!!, digestType: RSASignature.DigestType.sha256))!)
+        XCTAssert(false == (try! messageTobeSigned?.verify(verifyKey: keyPair!.publicKey, signature: signature!, digestType: RSASignature.DigestType.sha256))!)
     }
 
 }
