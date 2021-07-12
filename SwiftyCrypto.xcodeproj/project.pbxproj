@@ -144,7 +144,7 @@
 		B79CC85A2050CDF3006B71DB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B7B209B82043F6C5003BB264 /* CCommonCrypto */,
+				B7B209B82043F6C5003BB264 /* CommonCrypto */,
 				B7B209AC2043BB4F003BB264 /* HMAC */,
 				B7B2096120417799003BB264 /* protocol */,
 				B7B2095820417799003BB264 /* RSA */,
@@ -260,12 +260,12 @@
 			path = HMAC;
 			sourceTree = "<group>";
 		};
-		B7B209B82043F6C5003BB264 /* CCommonCrypto */ = {
+		B7B209B82043F6C5003BB264 /* CommonCrypto */ = {
 			isa = PBXGroup;
 			children = (
 				B7B209B72043F64B003BB264 /* module.modulemap */,
 			);
-			path = CCommonCrypto;
+			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
