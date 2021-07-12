@@ -7,6 +7,9 @@
 //
 
 import XCTest
+#if SWIFT_PACKAGE
+@testable import SwiftyCrypto
+#endif
 
 class HMACTests: XCTestCase {
     
