@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Yufu. All rights reserved.
 //
 
+import Foundation
+
 public enum SwiftyCryptoRSAKeySize: Int {
     case RSAKey64 = 512
     case RSAKey128 = 1024

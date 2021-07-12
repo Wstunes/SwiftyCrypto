@@ -47,7 +47,10 @@ public class RSAMessage: Message {
             throw SwiftyCryptoError.signatureCreateFailed(status: status)
         }
         
-        let signatureData = Data(bytes: UnsafePointer<UInt8>(signatureBytes), count: signatureBytes.count)
+        let signatureData = signatureBytes.withUnsafeBufferPointer { (pointer: UnsafeBufferPointer<UInt8>) -> Data in
+            return Data(buffer: pointer)
+        }
+        
         return RSASignature(data: signatureData)
     }
     
