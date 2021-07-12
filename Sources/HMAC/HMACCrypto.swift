@@ -35,12 +35,12 @@ public func hmac(algorithm: HMACAlgorithm, key: Data, message: Data) -> Data {
     let context = UnsafeMutablePointer<CCHmacContext>.allocate(capacity: 1)
     defer { context.deallocate() }
 
-    key.withUnsafeBytes() { (buffer: UnsafePointer<UInt8>) in
-        CCHmacInit(context, algorithm.commonCryptoAlgorithm, buffer, size_t(key.count))
+    key.withUnsafeBytes { buffer in
+        CCHmacInit(context, algorithm.commonCryptoAlgorithm, buffer.baseAddress, size_t(key.count))
     }
 
-    message.withUnsafeBytes { (buffer: UnsafePointer<UInt8>) in
-        CCHmacUpdate(context, buffer, size_t(message.count))
+    message.withUnsafeBytes { buffer in
+        CCHmacUpdate(context, buffer.baseAddress, size_t(message.count))
     }
 
     var hmac = Array<UInt8>(repeating: 0, count: Int(algorithm.commonCryptoDigestLength))
