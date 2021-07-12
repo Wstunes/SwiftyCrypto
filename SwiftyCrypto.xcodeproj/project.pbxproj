@@ -29,7 +29,6 @@
 		B7B2098820419D77003BB264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B2098620419D77003BB264 /* Main.storyboard */; };
 		B7B2098A20419D77003BB264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B2098920419D77003BB264 /* Assets.xcassets */; };
 		B7B2098D20419D77003BB264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B2098B20419D77003BB264 /* LaunchScreen.storyboard */; };
-		B7B2099820419D78003BB264 /* SwiftyCryptoTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2099720419D78003BB264 /* SwiftyCryptoTestAppTests.swift */; };
 		B7B209A52043B88F003BB264 /* HMACCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209A32043B88F003BB264 /* HMACCrypto.swift */; };
 		B7B209A62043B88F003BB264 /* HMACCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209A32043B88F003BB264 /* HMACCrypto.swift */; };
 		B7B209AB2043B9EA003BB264 /* HMACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B209AA2043B9EA003BB264 /* HMACTests.swift */; };
@@ -42,13 +41,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = B7B2093D20417776003BB264;
 			remoteInfo = SwiftyCrypto;
-		};
-		B7B2099420419D78003BB264 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7B2093520417775003BB264 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B7B2097F20419D77003BB264;
-			remoteInfo = SwiftyCryptoTestApp;
 		};
 		B7B209A020419DB6003BB264 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -100,9 +92,6 @@
 		B7B2098920419D77003BB264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7B2098C20419D77003BB264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7B2098E20419D77003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B2099320419D78003BB264 /* SwiftyCryptoTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyCryptoTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7B2099720419D78003BB264 /* SwiftyCryptoTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCryptoTestAppTests.swift; sourceTree = "<group>"; };
-		B7B2099920419D78003BB264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B209A32043B88F003BB264 /* HMACCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMACCrypto.swift; sourceTree = "<group>"; };
 		B7B209AA2043B9EA003BB264 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,13 +119,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7B2099020419D78003BB264 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -158,7 +140,6 @@
 				B7B2094220417776003BB264 /* Info.plist */,
 				B7B2094B20417776003BB264 /* SwiftyCryptoTests */,
 				B7B2098120419D77003BB264 /* SwiftyCryptoTestApp */,
-				B7B2099620419D78003BB264 /* SwiftyCryptoTestAppTests */,
 				B7B2093F20417776003BB264 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,7 +150,6 @@
 				B7B2093E20417776003BB264 /* SwiftyCrypto.framework */,
 				B7B2094720417776003BB264 /* SwiftyCryptoTests.xctest */,
 				B7B2098020419D77003BB264 /* SwiftyCryptoTestApp.app */,
-				B7B2099320419D78003BB264 /* SwiftyCryptoTestAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,15 +211,6 @@
 				B7B2098E20419D77003BB264 /* Info.plist */,
 			);
 			path = SwiftyCryptoTestApp;
-			sourceTree = "<group>";
-		};
-		B7B2099620419D78003BB264 /* SwiftyCryptoTestAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B7B2099720419D78003BB264 /* SwiftyCryptoTestAppTests.swift */,
-				B7B2099920419D78003BB264 /* Info.plist */,
-			);
-			path = SwiftyCryptoTestAppTests;
 			sourceTree = "<group>";
 		};
 		B7B209A92043B9D6003BB264 /* HMAC-Based */ = {
@@ -327,24 +298,6 @@
 			productReference = B7B2098020419D77003BB264 /* SwiftyCryptoTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B7B2099220419D78003BB264 /* SwiftyCryptoTestAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7B2099D20419D78003BB264 /* Build configuration list for PBXNativeTarget "SwiftyCryptoTestAppTests" */;
-			buildPhases = (
-				B7B2098F20419D78003BB264 /* Sources */,
-				B7B2099020419D78003BB264 /* Frameworks */,
-				B7B2099120419D78003BB264 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7B2099520419D78003BB264 /* PBXTargetDependency */,
-			);
-			name = SwiftyCryptoTestAppTests;
-			productName = SwiftyCryptoTestAppTests;
-			productReference = B7B2099320419D78003BB264 /* SwiftyCryptoTestAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -370,11 +323,6 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					B7B2099220419D78003BB264 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = B7B2097F20419D77003BB264;
-					};
 				};
 			};
 			buildConfigurationList = B7B2093820417775003BB264 /* Build configuration list for PBXProject "SwiftyCrypto" */;
@@ -393,7 +341,6 @@
 				B7B2093D20417776003BB264 /* SwiftyCrypto */,
 				B7B2094620417776003BB264 /* SwiftyCryptoTests */,
 				B7B2097F20419D77003BB264 /* SwiftyCryptoTestApp */,
-				B7B2099220419D78003BB264 /* SwiftyCryptoTestAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,13 +371,6 @@
 				B7B2098D20419D77003BB264 /* LaunchScreen.storyboard in Resources */,
 				B7B2098A20419D77003BB264 /* Assets.xcassets in Resources */,
 				B7B2098820419D77003BB264 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7B2099120419D78003BB264 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,14 +414,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7B2098F20419D78003BB264 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7B2099820419D78003BB264 /* SwiftyCryptoTestAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -489,11 +421,6 @@
 			isa = PBXTargetDependency;
 			target = B7B2093D20417776003BB264 /* SwiftyCrypto */;
 			targetProxy = B7B2094920417776003BB264 /* PBXContainerItemProxy */;
-		};
-		B7B2099520419D78003BB264 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B7B2097F20419D77003BB264 /* SwiftyCryptoTestApp */;
-			targetProxy = B7B2099420419D78003BB264 /* PBXContainerItemProxy */;
 		};
 		B7B209A120419DB6003BB264 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -786,44 +713,6 @@
 			};
 			name = Release;
 		};
-		B7B2099E20419D78003BB264 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3C5F8F3EE;
-				INFOPLIST_FILE = SwiftyCryptoTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
-			};
-			name = Debug;
-		};
-		B7B2099F20419D78003BB264 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3C5F8F3EE;
-				INFOPLIST_FILE = SwiftyCryptoTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yufu.SwiftyCryptoTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/**";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyCryptoTestApp.app/SwiftyCryptoTestApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -859,15 +748,6 @@
 			buildConfigurations = (
 				B7B2099B20419D78003BB264 /* Debug */,
 				B7B2099C20419D78003BB264 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B7B2099D20419D78003BB264 /* Build configuration list for PBXNativeTarget "SwiftyCryptoTestAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7B2099E20419D78003BB264 /* Debug */,
-				B7B2099F20419D78003BB264 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
