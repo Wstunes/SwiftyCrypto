@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import CCommonCrypto
+// Added support for iOS 16 - vizllx
+#if canImport(CommonCrypto)
+    import CommonCrypto
+#else
+    import CCommonCrypto
+#endif
 
 extension NSData {
     var sha1: Data {
