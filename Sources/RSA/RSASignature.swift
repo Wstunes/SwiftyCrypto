@@ -17,13 +17,23 @@ public class RSASignature {
         case sha384
         case sha512
         
-        var padding: SecPadding {
+        // FIXME: Deprecated method
+//        var padding: SecPadding {
+//            switch self {
+//            case .sha1: return .PKCS1SHA1
+//            case .sha224: return .PKCS1SHA224
+//            case .sha256: return .PKCS1SHA256
+//            case .sha384: return .PKCS1SHA384
+//            case .sha512: return .PKCS1SHA512
+//            }
+//        }
+        var algorithm: SecKeyAlgorithm {
             switch self {
-            case .sha1: return .PKCS1SHA1
-            case .sha224: return .PKCS1SHA224
-            case .sha256: return .PKCS1SHA256
-            case .sha384: return .PKCS1SHA384
-            case .sha512: return .PKCS1SHA512
+            case .sha1: return .rsaSignatureMessagePKCS1v15SHA1
+            case .sha224: return .rsaSignatureMessagePKCS1v15SHA224
+            case .sha256: return .rsaSignatureMessagePKCS1v15SHA256
+            case .sha384: return .rsaSignatureMessagePKCS1v15SHA384
+            case .sha512: return .rsaSignatureMessagePKCS1v15SHA512
             }
         }
     }

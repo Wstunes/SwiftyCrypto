@@ -23,12 +23,14 @@ public class RSAKeyFactory: NSObject {
         let publicKeyAttr: [NSString: Any] = [
             kSecAttrIsPermanent: NSNumber(value: true),
             kSecAttrApplicationTag: publicKeyTag.data(using: .utf8) as Any,
-            kSecAttrAccessible: kSecAttrAccessibleAlways
+//            kSecAttrAccessible: kSecAttrAccessibleAlways  // FIXME: Deprecated method
+            kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock
         ]
         let privateKeyAttr: [NSString: Any] = [
             kSecAttrIsPermanent: NSNumber(value: true),
             kSecAttrApplicationTag: privateKeyTag.data(using: .utf8) as Any,
-            kSecAttrAccessible: kSecAttrAccessibleAlways
+//            kSecAttrAccessible: kSecAttrAccessibleAlways  // FIXME: Deprecated method
+            kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock
         ]
 
         let keyPairAttr: [NSString: Any] = [
@@ -38,21 +40,36 @@ public class RSAKeyFactory: NSObject {
             kSecPrivateKeyAttrs: privateKeyAttr
         ]
 
-        var publicKey: SecKey?
-        var privateKey: SecKey?
-        var statusCode: OSStatus
-        statusCode = SecKeyGeneratePair(keyPairAttr as CFDictionary, &publicKey, &privateKey)
+        // FIXME: Deprecated method
+//        var publicKey: SecKey?
+//        var privateKey: SecKey?
+//        var statusCode: OSStatus
+//        statusCode = SecKeyGeneratePair(keyPairAttr as CFDictionary, &publicKey, &privateKey)
+//
+//        if statusCode == noErr,
+//            let priKey = privateKey,
+//            let pubKey = publicKey {
+//            return RSAKeyPair.init(privateKey: RSAKey.init(key: priKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: privateKeyTag), keyType: .PRIVATE),
+//                publicKey: RSAKey.init(key: pubKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: publicKeyTag), keyType: .PUBLIC))
+//        } else {
+//            print("Error generating key pair: \(statusCode)")
+//        }
+//
+//        return nil
 
-        if statusCode == noErr,
-            let priKey = privateKey,
-            let pubKey = publicKey {
-            return RSAKeyPair.init(privateKey: RSAKey.init(key: priKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: privateKeyTag), keyType: .PRIVATE),
-                publicKey: RSAKey.init(key: pubKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: publicKeyTag), keyType: .PUBLIC))
-        } else {
-            print("Error generating key pair: \(statusCode)")
+        var error: Unmanaged<CFError>?
+        guard let privateKey = SecKeyCreateRandomKey(keyPairAttr as CFDictionary, &error) else {
+            print("Error generating key pair: \(error!.takeRetainedValue() as Error)")
+            return nil
         }
 
-        return nil
+        guard let publicKey = SecKeyCopyPublicKey(privateKey) else {
+            print("Error copying public key.")
+            return nil
+        }
+
+        return RSAKeyPair(privateKey: RSAKey(key: privateKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: privateKeyTag), keyType: .PRIVATE),
+                          publicKey: RSAKey(key: publicKey, keyBase64String: secKeyToBase64String(secAttrApplicationTag: publicKeyTag), keyType: .PUBLIC))
     }
 
     func secKeyToBase64String(secAttrApplicationTag: String) -> String {
@@ -65,12 +82,11 @@ public class RSAKeyFactory: NSObject {
         let statusCode = SecItemCopyMatching(query as CFDictionary, &dataPtr)
 
         if statusCode == noErr,
-            let keyData = dataPtr as? Data {
-
+           let keyData = dataPtr as? Data
+        {
             let keyString = keyData.base64EncodedString()
             return keyString
         }
         return ""
     }
-
 }

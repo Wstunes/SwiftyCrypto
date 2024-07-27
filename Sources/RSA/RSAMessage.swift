@@ -25,54 +25,72 @@ public class RSAMessage: Message {
         self.init(data: data)
     }
     
+    // FIXME: Deprecated method
+//    public func sign(signingKey: RSAKey, digestType: RSASignature.DigestType) throws -> RSASignature {
+//
+//        let digest = self.digest(digestType: digestType)
+//        let blockSize = SecKeyGetBlockSize(signingKey.key)
+//        let maxChunkSize = blockSize - 11
+//
+//        guard digest.count <= maxChunkSize else {
+//            throw SwiftyCryptoError.invalidDigestSize(digestSize: digest.count, maxChunkSize: maxChunkSize)
+//        }
+//
+//        var digestBytes = [UInt8](repeating: 0, count: digest.count)
+//        (digest as NSData).getBytes(&digestBytes, length: digest.count)
+//
+//        var signatureBytes = [UInt8](repeating: 0, count: blockSize)
+//        var signatureDataLength = blockSize
+//
+//        let status = SecKeyRawSign(signingKey.key, digestType.padding, digestBytes, digestBytes.count, &signatureBytes, &signatureDataLength)
+//
+//        guard status == noErr else {
+//            throw SwiftyCryptoError.signatureCreateFailed(status: status)
+//        }
+//
+//        let signatureData = Data(bytes: UnsafePointer<UInt8>(signatureBytes), count: signatureBytes.count)
+//        return RSASignature(data: signatureData)
+//    }
     public func sign(signingKey: RSAKey, digestType: RSASignature.DigestType) throws -> RSASignature {
-        
-        let digest = self.digest(digestType: digestType)
-        let blockSize = SecKeyGetBlockSize(signingKey.key)
-        let maxChunkSize = blockSize - 11
-        
-        guard digest.count <= maxChunkSize else {
-            throw SwiftyCryptoError.invalidDigestSize(digestSize: digest.count, maxChunkSize: maxChunkSize)
+        var error: Unmanaged<CFError>?
+        guard let signature = SecKeyCreateSignature(signingKey.key, digestType.algorithm, data as CFData, &error) else {
+            throw error!.takeRetainedValue() as Error
         }
-        
-        var digestBytes = [UInt8](repeating: 0, count: digest.count)
-        (digest as NSData).getBytes(&digestBytes, length: digest.count)
-        
-        var signatureBytes = [UInt8](repeating: 0, count: blockSize)
-        var signatureDataLength = blockSize
-        
-        let status = SecKeyRawSign(signingKey.key, digestType.padding, digestBytes, digestBytes.count, &signatureBytes, &signatureDataLength)
-        
-        guard status == noErr else {
-            throw SwiftyCryptoError.signatureCreateFailed(status: status)
-        }
-        
-        let signatureData = Data(bytes: UnsafePointer<UInt8>(signatureBytes), count: signatureBytes.count)
-        return RSASignature(data: signatureData)
+
+        return RSASignature(data: signature as Data)
     }
     
+    // FIXME: Deprecated method
+//    public func verify(verifyKey: RSAKey, signature: RSASignature, digestType: RSASignature.DigestType) throws -> Bool {
+//        let digest = self.digest(digestType: digestType)
+//        var digestBytes = [UInt8](repeating: 0, count: digest.count)
+//        (digest as NSData).getBytes(&digestBytes, length: digest.count)
+//
+//        var signatureBytes = [UInt8](repeating: 0, count: signature.data.count)
+//        (signature.data as NSData).getBytes(&signatureBytes, length: signature.data.count)
+//
+//        let status = SecKeyRawVerify(verifyKey.key, digestType.padding, digestBytes, digestBytes.count, signatureBytes, signatureBytes.count)
+//
+//        if status == errSecSuccess {
+//            return true
+//        } else if status == -9809 {
+//            return false
+//        } else {
+//            throw SwiftyCryptoError.signatureVerifyFailed(status: status)
+//        }
+//    }
     public func verify(verifyKey: RSAKey, signature: RSASignature, digestType: RSASignature.DigestType) throws -> Bool {
-        
-        let digest = self.digest(digestType: digestType)
-        var digestBytes = [UInt8](repeating: 0, count: digest.count)
-        (digest as NSData).getBytes(&digestBytes, length: digest.count)
-        
-        var signatureBytes = [UInt8](repeating: 0, count: signature.data.count)
-        (signature.data as NSData).getBytes(&signatureBytes, length: signature.data.count)
-        
-        let status = SecKeyRawVerify(verifyKey.key, digestType.padding, digestBytes, digestBytes.count, signatureBytes, signatureBytes.count)
-        
-        if status == errSecSuccess {
-            return true
-        } else if status == -9809 {
-            return false
-        } else {
-            throw SwiftyCryptoError.signatureVerifyFailed(status: status)
+        var error: Unmanaged<CFError>?
+        let isValid = SecKeyVerifySignature(verifyKey.key, digestType.algorithm, data as CFData, signature.data as CFData, &error)
+
+        if let error = error?.takeRetainedValue() {
+            throw error
         }
+
+        return isValid
     }
     
     func digest(digestType: RSASignature.DigestType) -> Data {
-        
         let digest: Data
         
         switch digestType {
